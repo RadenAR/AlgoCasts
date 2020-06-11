@@ -37,6 +37,7 @@ function reverse (str) {
   // rev is short for reversed
   return str.split('').reduce((rev, char) => char + rev)
   // you can add the first value as empty string as reduct(callback, firstValue)
+  // the second argument could in this case be ''
 }
 // for debugger:
 // without this we never execute and there is nothing to debug
