@@ -33,7 +33,13 @@ function chunk (array, size) {
 
   // solution 2
   // similar to own solution but using the slice method instead of splice
-  
+  const result = []
+  let index = 0
+  while (index < array.length) {
+    result.push(array.slice(index, index + size))
+    index += size
+  }
+  return result
 }
 
 module.exports = chunk
