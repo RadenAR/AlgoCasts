@@ -17,6 +17,19 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  // initial solution
+  let line = ''
+  for (let i = 1; i <= n; i++) {
+    for (let j = 0; j < i; j++) {
+      line = line + '#'
+    }
+    for (let k = 0; k < (n-i); k++) {
+      line = line + ' '
+    }
+    console.log(line,'\n')
+    line = ''
+  }
+}
 
-module.exports = steps;
+module.exports = steps
