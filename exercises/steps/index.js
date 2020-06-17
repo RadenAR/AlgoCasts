@@ -17,7 +17,7 @@
 //       '### '
 //       '####'
 
-function steps(n) {
+function steps (n) {
   // initial solution
   let line = ''
   for (let i = 1; i <= n; i++) {
