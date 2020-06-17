@@ -8,29 +8,37 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-// solution 1
+// solution 2
 function anagrams (stringA, stringB) {
-  const mapA = buildCharMap(stringA)
-  const mapB = buildCharMap(stringB)
-
-  if (Object.keys(mapA).length !== Object.keys(mapB).length) {
-    return false
-  }
-  for (const c in mapA) {
-    if (mapA[c] !== mapB[c]) {
-      return false
-    }
-  }
-  return true
+  return cleanString(stringA) === cleanString(stringB)
+}
+function cleanString (str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
 }
 
-function buildCharMap (str) {
-  const charMap = {}
-  for (const char of str.replace(/[^\w]/, '').toLowerCase()) {
-    charMap[char] = charMap[char] + 1 || 1
-  }
-  return charMap
-}
+// solution 1
+// function anagrams (stringA, stringB) {
+//   const mapA = buildCharMap(stringA)
+//   const mapB = buildCharMap(stringB)
+
+//   if (Object.keys(mapA).length !== Object.keys(mapB).length) {
+//     return false
+//   }
+//   for (const c in mapA) {
+//     if (mapA[c] !== mapB[c]) {
+//       return false
+//     }
+//   }
+//   return true
+// }
+
+// function buildCharMap (str) {
+//   const charMap = {}
+//   for (const char of str.replace(/[^\w]/, '').toLowerCase()) {
+//     charMap[char] = charMap[char] + 1 || 1
+//   }
+//   return charMap
+// }
 
 // Initial solution
 // function anagrams (stringA, stringB) {
